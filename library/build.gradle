@@ -26,4 +26,4 @@ dependencies {
     implementation "com.google.android.material:material:$materialVersion"
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+apply from: '../mavenPublish.gradle'
