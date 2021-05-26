@@ -6,6 +6,10 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.1"
+
         consumerProguardFiles 'proguard-rules.pro'
     }
     compileOptions {
@@ -15,10 +19,11 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
-    implementation 'nl.qbusict:cupboard:2.2.0'
-    implementation "com.android.support:design:$supportLibVersion"
+    implementation "nl.qbusict:cupboard:$cupboardVersion"
+    implementation "com.google.android.material:material:$materialVersion"
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

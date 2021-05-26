@@ -1,1 +1,3 @@
-include ':sample', ':library', ':library-no-op'
+include ':app'
+include ':library'
+include ':library-no-op'

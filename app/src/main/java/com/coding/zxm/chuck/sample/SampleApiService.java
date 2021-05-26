@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.readystatesoftware.chuck.sample;
+package com.coding.zxm.chuck.sample;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -42,6 +42,7 @@ class SampleApiService {
 
     static class Data {
         final String thing;
+
         Data(String thing) {
             this.thing = thing;
         }
@@ -50,50 +51,73 @@ class SampleApiService {
     interface HttpbinApi {
         @GET("/get")
         Call<Void> get();
+
         @POST("/post")
         Call<Void> post(@Body Data body);
+
         @PATCH("/patch")
         Call<Void> patch(@Body Data body);
+
         @PUT("/put")
         Call<Void> put(@Body Data body);
+
         @DELETE("/delete")
         Call<Void> delete();
+
         @GET("/status/{code}")
         Call<Void> status(@Path("code") int code);
+
         @GET("/stream/{lines}")
         Call<Void> stream(@Path("lines") int lines);
+
         @GET("/stream-bytes/{bytes}")
         Call<Void> streamBytes(@Path("bytes") int bytes);
+
         @GET("/delay/{seconds}")
         Call<Void> delay(@Path("seconds") int seconds);
+
         @GET("/redirect-to")
         Call<Void> redirectTo(@Query("url") String url);
+
         @GET("/redirect/{times}")
         Call<Void> redirect(@Path("times") int times);
+
         @GET("/relative-redirect/{times}")
         Call<Void> redirectRelative(@Path("times") int times);
+
         @GET("/absolute-redirect/{times}")
         Call<Void> redirectAbsolute(@Path("times") int times);
+
         @GET("/image")
         Call<Void> image(@Header("Accept") String accept);
+
         @GET("/gzip")
         Call<Void> gzip();
+
         @GET("/xml")
         Call<Void> xml();
+
         @GET("/encoding/utf8")
         Call<Void> utf8();
+
         @GET("/deflate")
         Call<Void> deflate();
+
         @GET("/cookies/set")
         Call<Void> cookieSet(@Query("k1") String value);
+
         @GET("/basic-auth/{user}/{passwd}")
         Call<Void> basicAuth(@Path("user") String user, @Path("passwd") String passwd);
+
         @GET("/drip")
         Call<Void> drip(@Query("numbytes") int bytes, @Query("duration") int seconds, @Query("delay") int delay, @Query("code") int code);
+
         @GET("/deny")
         Call<Void> deny();
+
         @GET("/cache")
         Call<Void> cache(@Header("If-Modified-Since") String ifModifiedSince);
+
         @GET("/cache/{seconds}")
         Call<Void> cache(@Path("seconds") int seconds);
     }
