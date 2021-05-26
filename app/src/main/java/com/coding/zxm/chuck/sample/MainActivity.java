@@ -21,8 +21,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
-import com.readystatesoftware.chuck.Chuck;
-import com.readystatesoftware.chuck.ChuckInterceptor;
+import com.coding.zxm.chuck.Chuck;
+import com.coding.zxm.chuck.ChuckInterceptor;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
