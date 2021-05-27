@@ -1,5 +1,7 @@
-Chuck
+Chuck 
 =====
+
+Forked from [chuck](https://github.com/jgilfelt/chuck)
 
 Chuck is a simple in-app HTTP inspector for Android OkHttp clients. Chuck intercepts and persists all HTTP requests and responses inside your application, and provides a UI for inspecting their content.
 
@@ -22,8 +24,8 @@ Add the dependency in your `build.gradle` file. Add it alongside the `no-op` var
 
 ```gradle
  dependencies {
-   debugCompile 'com.readystatesoftware.chuck:library:1.1.0'
-   releaseCompile 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+   debugImplementation 'io.github.zhangxinmin528.chuck:library:1.0.1'
+   releaseImplementation 'io.github.zhangxinmin528.chuck:library-no-op:1.0.1'
  }
 ```
 
@@ -58,7 +60,7 @@ Chuck uses the following open source libraries:
 License
 -------
 
-    Copyright (C) 2017 Jeff Gilfelt.
+    Copyright (C) 2021 ZhangXinmin528.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

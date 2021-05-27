@@ -23,4 +23,4 @@ dependencies {
 }
 
 //apply from: rootProject.file('gradle/mavenPublish.gradle')
-apply from: '../mavenPublish.gradle'
+apply from: '../maven_publish.gradle'

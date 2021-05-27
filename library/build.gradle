@@ -26,4 +26,4 @@ dependencies {
     implementation "com.google.android.material:material:$materialVersion"
 }
 
-apply from: '../mavenPublish.gradle'
+apply from: '../maven_publish.gradle'
