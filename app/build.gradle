@@ -43,7 +43,8 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
-    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
+//    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
+    implementation("com.squareup.okhttp3:logging-interceptor")
     implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
     implementation "com.squareup.retrofit2:converter-gson:$converterGsonVersion"
 }
