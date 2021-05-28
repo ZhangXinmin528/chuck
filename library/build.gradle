@@ -8,7 +8,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.1"
+        versionName VERSION_NAME
 
         consumerProguardFiles 'proguard-rules.pro'
     }
@@ -21,7 +21,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.google.code.gson:gson:$gsonVersion"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$okhttp3Version"))
+    implementation("com.squareup.okhttp3:okhttp")
     implementation "nl.qbusict:cupboard:$cupboardVersion"
     implementation "com.google.android.material:material:$materialVersion"
 }

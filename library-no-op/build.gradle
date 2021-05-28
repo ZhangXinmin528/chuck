@@ -8,7 +8,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.1"
+        versionName VERSION_NAME
 
     }
     compileOptions {
@@ -19,8 +19,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$okhttp3Version"))
+    implementation("com.squareup.okhttp3:okhttp")
 }
 
-//apply from: rootProject.file('gradle/mavenPublish.gradle')
 apply from: '../maven_publish.gradle'

@@ -35,10 +35,10 @@ android {
 
 dependencies {
 //    debugImplementation project(':library')
-    debugImplementation 'io.github.zhangxinmin528.chuck:library:1.0.1'
-
+    debugImplementation 'io.github.zhangxinmin528.chuck:library:1.0.2'
+//
 //    releaseImplementation project(':library-no-op')
-    releaseImplementation 'io.github.zhangxinmin528.chuck:library-no-op:1.0.1'
+    releaseImplementation 'io.github.zhangxinmin528.chuck:library-no-op:1.0.2'
 
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.google.android.material:material:$materialVersion"
