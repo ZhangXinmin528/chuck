@@ -15,9 +15,9 @@
  ~ limitations under the License.
  -->
 <resources>
-    <color name="chuck_colorPrimary">#529FFF</color>
-    <color name="chuck_colorPrimaryDark">#417ECB</color>
-    <color name="chuck_colorAccent">#03DAC5</color>
+    <color name="chuck_colorPrimary">#00BCD4</color>
+    <color name="chuck_colorPrimaryDark">#0097A7</color>
+    <color name="chuck_colorAccent">#FF9800</color>
 
     <color name="chuck_status_default">#212121</color>
     <color name="chuck_status_requested">#9E9E9E</color>

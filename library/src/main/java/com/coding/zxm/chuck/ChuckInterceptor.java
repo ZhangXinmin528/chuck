@@ -112,7 +112,7 @@ public final class ChuckInterceptor implements Interceptor {
         this.maxContentLength = max;
         return this;
     }
-  
+
     /**
      * Set the retention period for HTTP transaction data captured by this interceptor.
      * The default is one week.
@@ -125,13 +125,15 @@ public final class ChuckInterceptor implements Interceptor {
         return this;
     }
 
-    @Override public Response intercept(Chain chain) throws IOException {
-        Request request = chain.request();
+    @Override
+    public Response intercept(Chain chain) throws IOException {
+        //request
+        final Request request = chain.request();
 
-        RequestBody requestBody = request.body();
+        final RequestBody requestBody = request.body();
         boolean hasRequestBody = requestBody != null;
 
-        HttpTransaction transaction = new HttpTransaction();
+        final HttpTransaction transaction = new HttpTransaction();
         transaction.setRequestDate(new Date());
 
         transaction.setMethod(request.method());
@@ -164,9 +166,10 @@ public final class ChuckInterceptor implements Interceptor {
             }
         }
 
-        Uri transactionUri = create(transaction);
+        final Uri transactionUri = create(transaction);
 
         long startNs = System.nanoTime();
+        //do http request
         Response response;
         try {
             response = chain.proceed(request);
@@ -177,7 +180,8 @@ public final class ChuckInterceptor implements Interceptor {
         }
         long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNs);
 
-        ResponseBody responseBody = response.body();
+        //reponse body
+        final ResponseBody responseBody = response.body();
 
         transaction.setRequestHeaders(response.request().headers()); // includes headers added later in the chain
         transaction.setResponseDate(new Date());

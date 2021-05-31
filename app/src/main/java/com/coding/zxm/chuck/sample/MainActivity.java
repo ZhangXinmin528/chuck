@@ -17,9 +17,10 @@ package com.coding.zxm.chuck.sample;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
 
 import com.coding.zxm.chuck.Chuck;
 import com.coding.zxm.chuck.ChuckInterceptor;
@@ -51,9 +52,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private OkHttpClient getClient(Context context) {
+        final ChuckInterceptor interceptor = new ChuckInterceptor(context);
+        interceptor.showNotification(false);
+
         return new OkHttpClient.Builder()
                 // Add a ChuckInterceptor instance to your OkHttp client
-                .addInterceptor(new ChuckInterceptor(context))
+                .addInterceptor(interceptor)
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();
     }
@@ -66,8 +70,14 @@ public class MainActivity extends AppCompatActivity {
     private void doHttpActivity() {
         SampleApiService.HttpbinApi api = SampleApiService.getInstance(getClient(this));
         Callback<Void> cb = new Callback<Void>() {
-            @Override public void onResponse(Call call, Response response) {}
-            @Override public void onFailure(Call call, Throwable t) { t.printStackTrace(); }
+            @Override
+            public void onResponse(Call call, Response response) {
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                t.printStackTrace();
+            }
         };
         api.get().enqueue(cb);
         api.post(new SampleApiService.Data("posted")).enqueue(cb);
